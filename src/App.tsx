@@ -4,33 +4,34 @@ import {
   Switch,
   Route,
   Link
- } from 'react-router-dom';
+} from 'react-router-dom';
+import { List } from 'semantic-ui-react';
 
 export default function App() {
   return (
     <Router>
       <div>
         <nav>
-          <ul>
-            <li>
+          <List>
+            <List.Item>
               <Link to="/">Home</Link>
-            </li>
-            <li>
+            </List.Item>
+            <List.Item>
               <Link to="/ListAllClients">List All Clients</Link>
-            </li>
-            <li>
+            </List.Item>
+            <List.Item>
               <Link to="/ListOneClient">List One Client</Link>
-            </li>
-            <li>
+            </List.Item>
+            <List.Item>
               <Link to="/AddClient">Add Client</Link>
-            </li>
-            <li>
+            </List.Item>
+            <List.Item>
               <Link to="/EditClient">Edit Client</Link>
-            </li>
-            <li>
+            </List.Item>
+            <List.Item>
               <Link to="/RemoveClient">Remove Client</Link>
-            </li>
-          </ul>
+            </List.Item>
+          </List>
         </nav>
 
         <Switch>
