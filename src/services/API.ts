@@ -1,11 +1,11 @@
 import axios from 'axios';
 
-const urlAPI = process.env.REACT_APP_URL_API; //API URL
-const tokenAPI = process.env.REACT_APP_TOKEN_API; //TOKEN API
+const baseURL = process.env.REACT_APP_BASE_URL; //API URL
+const token = process.env.REACT_APP_TOKEN; //TOKEN API
 
-export default axios.create ({
-  urlAPI,
+export const api = axios.create ({
+  baseURL,
   headers: {
-    'X-API-Key': tokenAPI
+    'X-API-Key': token
   }
 });
