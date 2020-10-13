@@ -15,6 +15,7 @@ export const LeftSide = styled.div`
 
 export const RightSide = styled.div`
   width: 85%;
+  height: calc(100vh - 70px);
   background: blue;
   float: right;
 `;
