@@ -1,6 +1,8 @@
 import React, { Children } from 'react';
+import Navbar from '../Navbar';
+import Menu from '../SideMenu';
 
-import { Container } from './styles';
+import { Container, LeftSide, RightSide } from './styles';
 
 interface Iprops {
   children: JSX.Element | JSX.Element[]
@@ -8,6 +10,14 @@ interface Iprops {
 
 export default function Layout({ children }: Iprops) {
   return (
-    <Container>{children}</Container>
+    <Container>
+      <Navbar />
+      <LeftSide>
+        <Menu></Menu>
+      </LeftSide>
+      <RightSide>
+        {children}
+      </RightSide>
+    </Container>
   );
 }
