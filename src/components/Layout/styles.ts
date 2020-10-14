@@ -8,14 +8,22 @@ export const Container = styled.div`
 
 export const LeftSide = styled.div`
   width: 15%;
-  max-width: 320px;
-  height: calc(100vh - 70px);
+  height: calc(100vh - 36px);
   float: left;
+  background-color: #404040;
+
+  @media (max-width: 768px){
+    display: none;
+  }
 `;
 
 export const RightSide = styled.div`
   width: 85%;
-  height: calc(100vh - 70px);
+  height: calc(100vh - 36px);
   background: blue;
   float: right;
+
+  @media (max-width: 768px){
+    width: 100%;
+  }
 `;

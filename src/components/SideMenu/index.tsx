@@ -8,22 +8,24 @@ const SideMenu: React.FC = () => {
 
   return (
     <Container>
-      <List divided relaxed>
-        <List.Item as='a'>
-          <Button secondary>
-            <Router>
-              <Link to='/'>Home</Link>
-            </Router>
-          </Button>
-        </List.Item>
-        <List.Item as='a'>
-          <Button secondary>
-            <Router>
-              <Link to='/'>Clientes</Link>
-            </Router>
-          </Button>
-        </List.Item>
-      </List>
+      <Router>
+        <List divided relaxed>
+          <List.Item as='a'>
+            <Link to='/'>
+              <Button fluid primary icon='home'>
+                Inicio
+              </Button>
+            </Link>
+          </List.Item>
+          <List.Item as='a'>
+            <Link to='/cliente'>
+              <Button fluid secondary icon='address book'>
+                Clientes
+              </Button>
+            </Link>
+          </List.Item>
+        </List>
+      </Router>
     </Container>
   );
 }
