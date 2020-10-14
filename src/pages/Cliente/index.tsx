@@ -1,9 +1,12 @@
 import React from 'react';
-
-// import { Container } from './styles';
+import { Container, Header } from 'semantic-ui-react';
 
 const Cliente: React.FC = () => {
-  return <div />;
+  return (
+    <Container fluid>
+      <Header as='h2' content='Clientes' />
+    </Container>
+  );
 }
 
 export default Cliente;

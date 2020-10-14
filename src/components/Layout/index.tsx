@@ -1,23 +1,21 @@
-import React, { Children } from 'react';
-import Navbar from '../Navbar';
-import Menu from '../SideMenu';
+import React from 'react';
+import { Container } from 'semantic-ui-react';
 
-import { Container, LeftSide, RightSide } from './styles';
+import Navbar from '../Navbar';
 
 interface Iprops {
   children: JSX.Element | JSX.Element[]
 }
 
-export default function Layout({ children }: Iprops) {
+const Layout: React.FC = () => {
   return (
-    <Container>
+    <Container fluid>
       <Navbar />
-      <LeftSide>
-        <Menu></Menu>
-      </LeftSide>
-      <RightSide>
-        {children}
-      </RightSide>
+    </Container>
+    <Container>
+      {children}
     </Container>
   );
 }
+
+export default Layout;

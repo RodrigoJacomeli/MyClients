@@ -1,10 +1,8 @@
 import React from 'react';
-import { Header } from 'semantic-ui-react';
 
-export default function Home() {
-  return (
-    <>
-      <Header as="h2" content="Home"/>
-    </>
-  );
+import {} from 'semantic-ui-react'
+const Home: React.FC = () => {
+  return <div />;
 }
+
+export default Home;
