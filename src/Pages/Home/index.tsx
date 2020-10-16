@@ -1,12 +1,20 @@
 import React from 'react';
-import { Container, Header } from 'semantic-ui-react';
+import { Container, Grid, Header } from 'semantic-ui-react';
+import Navbar from '../../Components/Navbar'
 
-const Home: React.FC = () => {
+export default function Home() {
   return (
-    <Container>
-      <Header as='h2' content='Home' />
+    <Container fluid>
+      <Grid>
+        <Grid.Row>
+          <Navbar />
+        </Grid.Row>
+        <Grid.Row>
+          <Container>
+            <Header as='h2' content='Home' />
+          </Container>
+        </Grid.Row>
+      </Grid>
     </Container>
   );
 }
-
-export default Home;

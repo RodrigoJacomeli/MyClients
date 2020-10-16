@@ -1,13 +1,12 @@
 import React from 'react'
 
-import { BrowserRouter as Router, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import { Container, Menu, Header, Button, Icon } from 'semantic-ui-react'
 
 export default function Navbar() {
   return (
     <Container fluid>
-      <Router>
         <Menu inverted>
           <Menu.Item>
             <Header as='h3' content='MyClients' inverted />
@@ -25,7 +24,6 @@ export default function Navbar() {
             </Button>
           </Menu.Item>
         </Menu>
-      </Router>
     </Container>
   )
 }

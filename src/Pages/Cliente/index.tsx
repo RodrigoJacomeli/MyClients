@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import { Container } from 'semantic-ui-react'
+import { Container, Grid } from 'semantic-ui-react'
 
-import { Link } from 'react-router-dom'
+//import { Link } from 'react-router-dom'
 import { AxiosResponse } from 'axios'
 
 import { Icliente, IDeleteClienteResponse } from '../../interfaces/cliente'
 
+import Navbar from '../../Components/Navbar'
 import HeaderPage from '../../Components/HeaderPage'
 import TableCliente from '../../Components/TableClientes'
 
@@ -47,9 +48,22 @@ export default function Cliente() {
   }, [])
 
   return (
-    <Container>
-      <HeaderPage />
-      <TableCliente clientes={clientes} deleteCliente={deleteCliente} />
+    <Container fluid>
+      <Grid>
+        <Grid.Row>
+          <Navbar />
+        </Grid.Row>
+        <Grid.Row>
+          <Container>
+            <HeaderPage />
+          </Container>
+        </Grid.Row>
+        <Grid.Row>
+          <Container>
+            <TableCliente clientes={clientes} deleteCliente={deleteCliente} />
+          </Container>
+        </Grid.Row>
+      </Grid>
     </Container>
   )
 }

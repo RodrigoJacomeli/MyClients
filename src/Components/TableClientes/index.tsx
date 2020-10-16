@@ -31,7 +31,7 @@ export default function TableClientes({ clientes, deleteCliente }: IProps) {
             <Table.HeaderCell>Nome</Table.HeaderCell>
             <Table.HeaderCell>Tel</Table.HeaderCell>
             <Table.HeaderCell>CEP</Table.HeaderCell>
-            <Table.HeaderCell>Ações</Table.HeaderCell>
+            <Table.HeaderCell></Table.HeaderCell>
           </Table.Row>
         </Table.Header>
 
@@ -46,7 +46,7 @@ export default function TableClientes({ clientes, deleteCliente }: IProps) {
                 <>
                   <Button color='blue' circular size='small' icon='search' title='Exibir mais informações' to={`/cliente/form/${cliente._id}`} as={Link} />
                   <Button color='yellow' circular size='small' icon='edit' title='Editar informações do cliente' to={`/cliente/form/${cliente._id}`} as={Link} />
-                  <Button color='red' circular size='small' icon='delete' title='Remover cliente da lista' onClick={() => handleDeleteClick(cliente)} ></Button>
+                  <Button color='red' circular size='small' icon='delete' title='Remover cliente da lista' onClick={() => handleDeleteClick(cliente)} />
                 </>
               }
               />
