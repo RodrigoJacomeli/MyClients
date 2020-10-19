@@ -5,6 +5,7 @@ const token = process.env.REACT_APP_TOKEN
 
 export default axios.create({
   baseURL,
+  timeout: 1000,
   headers: {
     'X-API-Key': token
   }

@@ -12,7 +12,7 @@ export default function Routes() {
         <Route path='/' exact component={Home} />
         <Route path='/cliente' exact component={Cliente} />
         <Route path='/cliente/form' exact component={FormCliente} />
-        <Route path='/cliente/form/:_id' exact component={FormCliente} />
+        <Route path='/cliente/:_id' exact component={FormCliente} />
       </Switch>
     </Router>
   )

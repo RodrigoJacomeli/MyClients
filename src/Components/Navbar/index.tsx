@@ -9,7 +9,7 @@ export default function Navbar() {
     <Container fluid>
         <Menu inverted>
           <Menu.Item>
-            <Header as='h3' content='MyClients' inverted />
+          <Header as='h3' content='MyClients' inverted style={{ marginLeft: 10}}/>
           </Menu.Item>
           <Menu.Item>
             <Button fluid primary title='Ir para Home' as={Link} to='/'>

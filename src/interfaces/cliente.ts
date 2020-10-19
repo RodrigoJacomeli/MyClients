@@ -15,17 +15,34 @@ export interface Icliente {
   }
 }
 
-export interface ICadastroCliente {
-  _id: string
-  nome: string
-  cpf: string
+export interface IclienteOpcional {
+  _id?: string
+  nome?: string
+  cpf?: string
   dataNascimento?: string
   telefone?: string
+  endereco?: {
+    cep?: string
+    logradouro?: string
+    number?: string
+    complemento?: string
+    bairro?: string
+    cidade?: string
+    estado?: string
+  }
+}
+
+export interface ICadastroCliente {
+
+  nome: string
+  cpf: string
+  dataNascimento: string
+  telefone: string
   endereco: {
     cep: string
     logradouro: string
     number: string
-    complemento?: string
+    complemento: string
     bairro: string
     cidade: string
     estado: string
