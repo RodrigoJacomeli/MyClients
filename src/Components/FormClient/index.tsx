@@ -9,25 +9,19 @@ import { AxiosResponse } from 'axios'
 
 interface Ichange {
     name: string
-    value: string | number
+    value: string | number | boolean
 }
 
 interface Iparams {
-    _id?: string | undefined
+    _id?: string
 }
 
 const defaultValues = {
-    nome: '',
-    cpf: '',
-    dataNascimento: '',
     telefone: '',
-    cep: '',
-    logradouro: '',
-    number: '',
-    complemento: '',
-    bairro: '',
-    cidade: '',
-    estado: ''
+    cadastroAtivo: true,
+    endereco: {
+        complemento: '',
+    }
 }
 
 export default function FormClient() {
@@ -58,6 +52,7 @@ export default function FormClient() {
 
     function handleChange({ name, value }: Ichange) {
         setValues({ ...values, [name]: value })
+        console.log({ ...values, [name]: value })
     }
 
     function handleSubmit(evt: FormEvent) {
@@ -88,21 +83,25 @@ export default function FormClient() {
                     <Header as='h4' content='Dados Pessoais' />
                     <Form.Input fluid label='Nome' name='nome' place='Luiz Antonio da Silva' required value={values.nome} onChange={(_, { name, value }) => handleChange({ name, value })} tabIndex={1} />
                     <Form.Group widths='3'>
-                        <Form.Input fluid label='CPF' name='cpf' placeholder='000.000.000-00' required value={values.cpf} onChange={(_, { name, value }) => handleChange({ name, value })} tabIndex={2} />
-                        <Form.Input fluid label='Data de Nascimento' name='dataNascimento' placeholder='00/00/0000' value={values.dataNascimento} onChange={(_, { name, value }) => handleChange({ name, value })} tabIndex={3} />
-                        <Form.Input fluid type='tel' label='Telefone' name='telefone' placeholder='(00) 0000-0000' value={values.telefone} onChange={(_, { name, value }) => handleChange({ name, value })} tabIndex={4} />
+                        <Form.Input fluid label='CPF' name='cpf' placeholder='000.000.000-00' required value={values.cpf} onChange={(_, { name, value }) => handleChange({ name, value })} tabIndex={2} width={3}/>
+                        <Form.Input fluid type='tel' label='Telefone' name='telefone' placeholder='(00) 0000-0000' value={values.telefone} onChange={(_, { name, value }) => handleChange({ name, value })} tabIndex={4} width={3}/>
                     </Form.Group>
                     <Header as='h4' content='Endereço' />
                     <Form.Group widths='4'>
-                        <Form.Input fluid label='CEP' name='cep' placeholder='00000-000' required width='2' value={values.endereco?.cep} onChange={(_, { name, value }) => handleChange({ name, value })} tabIndex={5} />
-                        <Form.Input fluid label='Logradouro' name='logradouro' placeholder='Ex: Rua Dona Aparecida' required width='8' value={values.endereco?.logradouro} onChange={(_, { name, value }) => handleChange({ name, value })} tabIndex={6} />
-                        <Form.Input fluid label='Número' name='number' placeholder='000' required width='2' value={values.endereco?.number} onChange={(_, { name, value }) => handleChange({ name, value })} tabIndex={7} />
-                        <Form.Input fluid label='Complemento' name='complemento' placeholder='Ex: Casa / Bloco 00 Ap 000' width='4' value={values.endereco?.complemento} onChange={(_, { name, value }) => handleChange({ name, value })} tabIndex={8} />
+                        <Form.Input fluid label='CEP' name='cep' placeholder='00000-000' required width='2' value={values.endereco.cep} onChange={(_, { name, value }) => handleChange({ name, value })} tabIndex={5} />
+                        <Form.Input fluid label='Logradouro' name='logradouro' placeholder='Ex: Rua Dona Aparecida' required width='8' value={values.endereco.logradouro} onChange={(_, { name, value }) => handleChange({ name, value })} tabIndex={6} />
+                        <Form.Input fluid label='Número' name='numero' placeholder='000' required width='2' value={values.endereco.numero} onChange={(_, { name, value }) => handleChange({ name, value })} tabIndex={7} />
+                        <Form.Input fluid label='Complemento' name='complemento' placeholder='Ex: Casa / Bloco 00 Ap 000' width='4' value={values.endereco.complemento} onChange={(_, { name, value }) => handleChange({ name, value })} tabIndex={8} />
                     </Form.Group>
                     <Form.Group widths='equal'>
-                        <Form.Input fluid label='Bairro' name='bairro' placeholder='Ex: Tatuape' required value={values.endereco?.bairro} onChange={(_, { name, value }) => handleChange({ name, value })} tabIndex={9} />
-                        <Form.Input fluid label='Cidade' name='cidade' placeholder='Ex: São Paulo' required value={values.endereco?.cidade} onChange={(_, { name, value }) => handleChange({ name, value })} tabIndex={10} />
-                        <Form.Input fluid label='Estado' name='estado' placeholder='Ex: São Paulo' required value={values.endereco?.estado} onChange={(_, { name, value }) => handleChange({ name, value })} tabIndex={11} />
+                        <Form.Input fluid label='Bairro' name='bairro' placeholder='Ex: Tatuape' required value={values.endereco.bairro} onChange={(_, { name, value }) => handleChange({ name, value })} tabIndex={9} />
+                        <Form.Input fluid label='Cidade' name='cidade' placeholder='Ex: São Paulo' required value={values.endereco.cidade} onChange={(_, { name, value }) => handleChange({ name, value })} tabIndex={10} />
+                        <Form.Input fluid label='Estado' name='estado' placeholder='Ex: São Paulo' required value={values.endereco.estado} onChange={(_, { name, value }) => handleChange({ name, value })} tabIndex={11} />
+                    </Form.Group>
+                    <Form.Group inline>
+                        <label>Cadastro Ativo :</label>
+                        <Form.Radio label='Ativo' name='cadastroAtivo' checked={values.cadastroAtivo} onChange={() => handleChange({ name: 'cadastroAtivo', value: true })} />
+                        <Form.Radio label='Desativado' name='cadastroAtivo' checked={!values.cadastroAtivo} onChange={() => handleChange({ name: 'cadastroAtivo', value: false })}></Form.Radio>
                     </Form.Group>
                     <Form.Group>
                         <Form.Button fluid size='big' floated='right' color='green' icon='check' content='Salvar' tabIndex={12} loading={loading} type='submit' />

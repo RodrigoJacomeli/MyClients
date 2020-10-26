@@ -18,7 +18,7 @@ export default function HeaderPage() {
       <Grid columns='2'>
         <Grid.Row>
           <Grid.Column>
-            <Button secondary circular icon='arrow left' title='Voltar a página' as={Link} to={location.pathname === '/cliente/form' ? '/cliente' : '/'} />
+            <Button secondary circular icon='arrow left' title='Voltar a página' as={Link} to={location.pathname === `/cliente/form` ? '/cliente' : '/'} />
           </Grid.Column>
           <Grid.Column>
             {location.pathname === '/cliente/form' ? '' : <Button color='blue' circular icon='add' title='Adicionar novo cliente' content='Novo Cliente' floated='right' as={Link} to='/cliente/form' />}

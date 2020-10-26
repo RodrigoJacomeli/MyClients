@@ -2,12 +2,12 @@ export interface Icliente {
   _id: string
   nome: string
   cpf: string
-  dataNascimento: string
   telefone: string
+  cadastroAtivo: boolean
   endereco: {
     cep: string
     logradouro: string
-    number: string
+    numero: string
     complemento: string
     bairro: string
     cidade: string
@@ -19,12 +19,12 @@ export interface IclienteOpcional {
   _id?: string
   nome?: string
   cpf?: string
-  dataNascimento?: string
   telefone?: string
-  endereco?: {
+  cadastroAtivo?: boolean
+  endereco: {
     cep?: string
     logradouro?: string
-    number?: string
+    numero?: string
     complemento?: string
     bairro?: string
     cidade?: string
@@ -33,15 +33,14 @@ export interface IclienteOpcional {
 }
 
 export interface ICadastroCliente {
-
   nome: string
   cpf: string
-  dataNascimento: string
   telefone: string
+  cadastroAtivo: boolean
   endereco: {
     cep: string
     logradouro: string
-    number: string
+    numero: string
     complemento: string
     bairro: string
     cidade: string
