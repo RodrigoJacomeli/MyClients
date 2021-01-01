@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid, Header, Button } from 'semantic-ui-react'
+import { Grid, Header, Button, Divider } from 'semantic-ui-react'
 import { Link, useLocation } from 'react-router-dom'
 
 export default function HeaderPage() {
@@ -12,6 +12,7 @@ export default function HeaderPage() {
         <Grid.Row>
           <Grid.Column>
             <Header as='h3' content={location.pathname === '/cliente/form' ? 'Formulario de Cadastro' : 'Todos Clientes'} />
+            <Divider />
           </Grid.Column>
         </Grid.Row>
       </Grid>
