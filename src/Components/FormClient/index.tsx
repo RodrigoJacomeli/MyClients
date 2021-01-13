@@ -16,7 +16,7 @@ interface Iparams {
     _id?: string
 }
 
-const defaultValues = {
+const defaultValues: IclienteOpcional = {
     nome: '',
     cpf: '',
     telefone: '',
